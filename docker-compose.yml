@@ -1,31 +1,31 @@
 version: '2'
 
 services:
-  web_alice:
+  web_app1:
     restart: always
-    build: ~/alicehoyle
-    container_name: flaskapp_alice
+    build: ~/app1
+    container_name: flaskapp_1
     command: >
         gunicorn -b :8000
          --access-logfile -
          --reload
-         "app:create_app()"
+         "app1.app:create_app()"
     volumes:
-    - /static/alice/:/static
+    - /host/dir/to/app:/static/app1
     expose:
       - "8000"
 
-  web_ben:
+  web_app2:
     restart: always
-    build: ~/website
-    container_name: flaskapp_ben
+    build: ~/app2
+    container_name: flaskapp_2
     command: >
         gunicorn -b :8000
          --access-logfile -
          --reload
-         "benhoyle.app:create_app()"
+         "app2.app:create_app()"
     volumes:
-    - /static/ben/:/website/benhoyle/static
+    - /host/dir/to/app:/static/app2
     expose:
       - "8000"
 
@@ -36,9 +36,9 @@ services:
     ports:
       - "80:80"
     volumes_from:
-      - web_alice
-      - web_ben
+      - web_app1
+      - web_app2
     links:
-    - web_alice:web_alice
-    - web_ben:web_ben
+    - web_app1:web_app1
+    - web_app2:web_app2
 
