@@ -11,7 +11,7 @@ services:
          --reload
          "app1.app:create_app()"
     volumes:
-    - /host/dir/to/app:/static/app1
+    - /host/dir/to/app1/staticdir:/static/app1
     expose:
       - "8000"
 
@@ -25,7 +25,7 @@ services:
          --reload
          "app2.app:create_app()"
     volumes:
-    - /host/dir/to/app:/static/app2
+    - /host/dir/to/app2/staticdir:/static/app2
     expose:
       - "8000"
 
