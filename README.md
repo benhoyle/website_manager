@@ -1,5 +1,5 @@
 # Website Manager
-A configuration to server multiple domains using Nginx and Flask on a Raspberry Pi 3.
+A configuration to serve multiple domains using Nginx and Flask on a Raspberry Pi 3.
 
 ## Pi Setup
 Download a copy of the 64 bit Hypriot OS image from here : [https://github.com/DieterReuter/image-builder-rpi64/releases](https://github.com/DieterReuter/image-builder-rpi64/releases).
@@ -8,7 +8,7 @@ Stick onto an SD card following the guide here: [http://blog.hypriot.com/getting
 
 Stick the SD card with loaded image into your Raspberry Pi 3. Plug in.
 
-(Optional: change the hostname, default user, password, root password, ssh settings etc.)
+(Optional but highly recommended: change the hostname, default user, password, root password, ssh settings etc.)
 
 SSH into the Raspberry Pi (with default settings: ```ssh pirate@black-pearl```, password: hypriot).
 
